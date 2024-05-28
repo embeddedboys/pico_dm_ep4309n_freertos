@@ -27,10 +27,10 @@
 
 #if INDEV_DRV_USE_GT911
 
-#define GT911_PIN_SCL   27
-#define GT911_PIN_SDA   26
-#define GT911_PIN_RST   18
-#define GT911_PIN_IRQ   21
+#define GT911_PIN_SCL   19
+#define GT911_PIN_SDA   18
+#define GT911_PIN_RST   27
+#define GT911_PIN_IRQ   26
 
 #define GT911_CMD_WR    0x28
 #define GT911_CMD_RD    0x29

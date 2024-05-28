@@ -35,10 +35,10 @@
 
 #define TSC2007_ADDR       0x48
 #define TSC2007_DEF_SPEED  400000
-#define TSC2007_PIN_SCL    27
-#define TSC2007_PIN_SDA    26
-#define TSC2007_PIN_IRQ    21
-#define TSC2007_PIN_RST    29
+#define TSC2007_PIN_SCL    19
+#define TSC2007_PIN_SDA    18
+#define TSC2007_PIN_IRQ    26
+#define TSC2007_PIN_RST    27
 
 #define TSC2007_CMD_READ_X 0xC0
 #define TSC2007_CMD_READ_Y 0xD0
@@ -157,7 +157,7 @@ static void tsc2007_hw_init(struct indev_priv *priv)
     i2c_bus_scan(priv->spec->i2c.master);
 
     priv->ops->reset(priv);
-    priv->ops->set_dir(priv, INDEV_DIR_SWITCH_XY | INDEV_DIR_INVERT_Y | INDEV_DIR_INVERT_X);
+    // priv->ops->set_dir(priv, INDEV_DIR_SWITCH_XY | INDEV_DIR_INVERT_Y | INDEV_DIR_INVERT_X);
 }
 
 static struct indev_spec tsc2007 = {
@@ -172,10 +172,10 @@ static struct indev_spec tsc2007 = {
         .pin_sda = TSC2007_PIN_SDA,
     },
 
-    .x_res  = 410,  // 25 ~ 435 --- 0 ~ 410
-    .y_res  = 275,  // 25 ~ 300 --- 0 ~ 275
-    .x_offs = -25,
-    .y_offs = -25,
+    .x_res  = 445,  // 15 ~ 460 --- 0 ~ 445
+    .y_res  = 230,  // 20 ~ 250 --- 0 ~ 230
+    .x_offs = -15,
+    .y_offs = -20,
     .resolution = TSC2007_RESOLUTION_8BIT,
 
     .pin_irq = TSC2007_PIN_IRQ,
